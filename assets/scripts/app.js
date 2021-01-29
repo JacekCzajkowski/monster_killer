@@ -2,9 +2,8 @@ const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 20;
-
 const MODE_ATTACK = 'ATTACK'; // MODE_ATTACK = 0
-const MODE_STRONG_ATTACK = 'STONG_ATTACK'; // MODE_STRONG_ATTACK = 1
+const MODE_STRONG_ATTACK = 'STRONG_ATTACK'; // MODE_STRONG_ATTACK = 1
 const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
 const LOG_EVENT_PLAYER_STRONG_ATTACK = 'PLAYER_STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
@@ -16,7 +15,7 @@ let lastLoggedEntry;
 
 function getMaxLifeValues() {
     const enteredValue = prompt('Maximum life for you and the monster', '100');
-    let parsedValue = parseInt(enteredValue);
+    const parsedValue = parseInt(enteredValue);
     if (isNaN(parsedValue) || parsedValue <= 0) {
         throw {message: 'Inalid user input, not a number!'};
     }
@@ -26,7 +25,7 @@ function getMaxLifeValues() {
 let chosenMaxLife;
 
 try {
-    let chosenMaxLife = getMaxLifeValues();
+    chosenMaxLife = getMaxLifeValues();
 } catch (error) {
     console.log(error);
     chosenMaxLife = 100;
